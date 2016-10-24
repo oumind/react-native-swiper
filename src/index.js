@@ -14,6 +14,7 @@ import {
   ActivityIndicator
 } from 'react-native'
 
+import { ViewPagerZoom } from './ViewPager';
 const { width, height } = Dimensions.get('window')
 
 /**
@@ -554,13 +555,13 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPagerAndroid ref='scrollView'
+      <ViewPagerZoom ref='scrollView'
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageSelected={this.onScrollEnd}
         style={{flex: 1}}>
         {pages}
-      </ViewPagerAndroid>
+      </ViewPagerZoom>
     )
   }
 
