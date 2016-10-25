@@ -9,7 +9,6 @@ import {
   ScrollView,
   Dimensions,
   TouchableOpacity,
-  ViewPagerAndroid,
   Platform,
   ActivityIndicator
 } from 'react-native'
@@ -118,7 +117,8 @@ export default class extends Component {
     autoplayTimeout: PropTypes.number,
     autoplayDirection: PropTypes.bool,
     index: PropTypes.number,
-    renderPagination: PropTypes.func
+    renderPagination: PropTypes.func,
+    renderHeader: PropTypes.func,
   }
 
   /**
@@ -620,6 +620,7 @@ export default class extends Component {
         width: state.width,
         height: state.height
       }]}>
+        {props.renderHeader && props.renderHeader(state.index, state.total, this)}
         {this.renderScrollView(pages)}
         {props.showsPagination && (props.renderPagination
           ? this.props.renderPagination(state.index, state.total, this)
