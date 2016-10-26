@@ -23,4 +23,4 @@ export class ViewPagerZoom extends ViewPagerAndroid {
   }
 }
 
-const NativeAndroidViewPager = requireNativeComponent('ViewPagerZoom', ViewPagerZoom);
+const NativeAndroidViewPager = requireNativeComponent('ViewPagePackage', ViewPagerZoom);
