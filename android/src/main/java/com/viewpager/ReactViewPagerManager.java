@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
  */
 public class ReactViewPagerManager extends ViewGroupManager<ReactViewPager> {
 
-    private static final String REACT_CLASS = "ViewPagerZoom";
+    private static final String REACT_CLASS = "ViewPagerPackage";
 
     public static final int COMMAND_SET_PAGE = 1;
     public static final int COMMAND_SET_PAGE_WITHOUT_ANIMATION = 2;
