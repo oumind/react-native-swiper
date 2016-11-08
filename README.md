@@ -94,6 +94,8 @@
 
 ```bash
 $ npm i react-native-swiper --save
+
+$ react-native link react-native-swiper
 ```
 
 ### Basic Usage
