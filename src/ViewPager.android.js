@@ -7,7 +7,7 @@ import {
 
 const VIEWPAGER_REF = 'viewPager';
 
-export class ViewPagerZoom extends ViewPagerAndroid {
+export class ViewPagePackage extends ViewPagerAndroid {
   render() {
     return (
       <NativeAndroidViewPager
@@ -23,4 +23,4 @@ export class ViewPagerZoom extends ViewPagerAndroid {
   }
 }
 
-const NativeAndroidViewPager = requireNativeComponent('ViewPagePackage', ViewPagerZoom);
+const NativeAndroidViewPager = requireNativeComponent('ViewPagePackage', ViewPagePackage);

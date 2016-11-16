@@ -13,7 +13,7 @@ import {
   ActivityIndicator
 } from 'react-native'
 
-import { ViewPagerZoom } from './ViewPager';
+import { ViewPagePackage } from './ViewPager';
 const { width, height } = Dimensions.get('window')
 
 /**
@@ -119,6 +119,7 @@ export default class extends Component {
     index: PropTypes.number,
     renderPagination: PropTypes.func,
     renderHeader: PropTypes.func,
+    onChangePage: PropTypes.func,
   }
 
   /**
@@ -555,13 +556,13 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPagerZoom ref='scrollView'
+      <ViewPagePackage ref='scrollView'
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageSelected={this.onScrollEnd}
         style={{flex: 1}}>
         {pages}
-      </ViewPagerZoom>
+      </ViewPagePackage>
     )
   }
 
@@ -613,6 +614,10 @@ export default class extends Component {
       })
     } else {
       pages = <View style={pageStyle} key={0}>{children}</View>
+    }
+
+    if (props.onChangePage) {
+      props.onChangePage(state.index, state.total, this);
     }
 
     return (
